@@ -47,11 +47,27 @@
                         <a href="./restaurants/la-palette-du-gout.html" data-tag="new">
                             <!-- <img src="./assets/img/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg" alt=""> -->
                             <div>
+                                <!-- ISSUE : Il y a un problème que j'ai décelé en utilisant le lecteur d'écran NVDA, il dit :
+                                    lien - La palette du goût
+                                    lien - Ménilmontant
+
+                                    Solution 1 (non-testée) : Supprimer le parent <div> et remplacer les <p> par des <span>
+
+                                    La raison est que l'élément HTML <a> possède un modèle de contenu transparent (transparent content model), en gros cela indique que l'on peut y mettrer n'importe quel contenu.
+
+                                    Citation (MDN) : Si l'élément possède un modèle de contenu transparent, son contenu doit alors être structuré comme du HTML5 valide, et ce, même si l'élément transparent a été enlevé et remplacé par ses éléments fils.
+
+                                    On risque de peut-être de rencontrer un problème avec cette solution lorsque l'on va faire la mise en page (CSS), mais à bien y réfléchir je ne pense pas : on donne une hauteur absolue à l'image, on donne la propriété display: block aux spans pour qu'ils s'empilent de manière naturelle.
+                                -->
                                 <p>La palette du goût</p>
                                 <p>Ménilmontant</p>
                             </div>
                         </a>
                         <label for="like--la-palette-du-gout">
+                            <!-- TODO : Pour une meilleure organisation il serait bien de regrouper les inputs dans un formulaire externe.
+                            
+                                Sans l'utilisation du JavaScript, malheureusement, cela va être difficile car comment écrire un sélecteur CSS pour que l'icône du coeur réponde à l'état de l'input qui serait dans un formulaire externe ? Je ne vois pas ; pour le moment.
+                            -->
                             <input type="checkbox" class="sr-only" name="like--la-palette-du-gout" id="like--la-palette-du-gout">
                             <i class="fa-regular fa-heart" aria-hidden="true"></i>
                         </label>
