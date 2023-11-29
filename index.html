@@ -7,5 +7,119 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Shrikhand&display=swap" rel="stylesheet">
+        <script src="https://kit.fontawesome.com/95addc9895.js" crossorigin="anonymous"></script>
     </head>
+    <body>
+        <header>
+            <p lang="en">ohmyfood</p>
+        </header>
+        <main>
+            <header>
+                <p>
+                    <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+                    <span>Paris, Belleville</span>
+                </p>
+                <h1>Réservez le menu qui vous convient</h1>
+                <p>Découvrez des restaurants d'exception, sélectionnés par nos soins.</p>
+                <a href="#restaurants">Explorez nos restaurants</a>
+            </header>
+            <section>
+                <h2>Fonctionnement</h2>
+                <ol>
+                    <li>
+                        <i class="fa-solid fa-mobile-screen-button" aria-hidden="true"></i>
+                        <span>Choisissez un restaurant</span>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-list-ul" aria-hidden="true"></i>
+                        <span>Composez votre menu</span>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-store" aria-hidden="true"></i>
+                        <span>Dégustez au restaurant</span>
+                    </li>
+                </ol>
+            </section>
+            <section id="restaurants">
+                <h2>Restaurants</h2>
+                <ul>
+                    <li>
+                        <a href="./restaurants/la-palette-du-gout.html" data-tag="new">
+                            <!-- <img src="./assets/img/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg" alt=""> -->
+                            <div>
+                                <p>La palette du goût</p>
+                                <p>Ménilmontant</p>
+                            </div>
+                        </a>
+                        <label for="like--la-palette-du-gout">
+                            <input type="checkbox" class="sr-only" name="like--la-palette-du-gout" id="like--la-palette-du-gout">
+                            <i class="fa-regular fa-heart" aria-hidden="true"></i>
+                        </label>
+                    </li>
+                    <li>
+                        <a href="./restaurants/la-note-enchantee.html" data-tag="new">
+                            <!-- <img src="./assets/img/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg" alt=""> -->
+                            <div>
+                                <p>La note enchantée</p>
+                                <p>Charonne</p>
+                            </div>
+                        </a>
+                        <label for="like--la-note-enchantee">
+                            <input type="checkbox" class="sr-only" name="like--la-note-enchantee" id="like--la-note-enchantee" checked>
+                            <i class="fa-regular fa-heart" aria-hidden="true"></i>
+                        </label>
+                    </li>
+                    <li>
+                        <a href="./restaurants/a-la-francaise.html">
+                            <!-- <img src="./assets/img/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg" alt=""> -->
+                            <div>
+                                <p>À la française</p>
+                                <p>Cité Rouge</p>
+                            </div>
+                        </a>
+                        <label for="like--a-la-francaise">
+                            <input type="checkbox" class="sr-only" name="like--a-la-francaise" id="like--a-la-francaise">
+                            <i class="fa-regular fa-heart" aria-hidden="true"></i>
+                        </label>
+                    </li>
+                    <li>
+                        <a href="./restaurants/le-delice-des-sens.html" data-tag="new">
+                            <!-- <img src="./assets/img/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg" alt=""> -->
+                            <div>
+                                <p>Le délice des sens</p>
+                                <p>Folie-Méricourt</p>
+                            </div>
+                        </a>
+                        <label for="like--le-delice-des-sens">
+                            <input type="checkbox" class="sr-only" name="like--le-delice-des-sens" id="like--le-delice-des-sens">
+                            <i class="fa-regular fa-heart" aria-hidden="true"></i>
+                        </label>
+                    </li>
+                </ul>
+            </section>
+        </main>
+        <footer>
+            <p>ohmyfood</p>
+            <ul>
+                <li>
+                    <a href="">
+                        <i class="fa-solid fa-utensils" aria-hidden="true"></i>
+                        <span>Proposer un restaurant</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <i class="fa-solid fa-handshake-angle" aria-hidden="true"></i>
+                        <span>Devenir partenaire</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="">Mentions légales</a>
+                </li>
+                <li>
+                    <a href="">Contact</a>
+                </li>
+            </ul>
+        </footer>
+    </body>
 </html>
