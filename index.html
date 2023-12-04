@@ -8,132 +8,141 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Shrikhand&display=swap" rel="stylesheet">
         <script src="https://kit.fontawesome.com/95addc9895.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="./assets/css/style.css">
     </head>
     <body>
-        <header>
-            <p lang="en">ohmyfood</p>
+        <header class="site-header">
+            <p lang="en" class="title">ohmyfood</p>
         </header>
         <main>
-            <header>
-                <p>
-                    <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+            <header class="main-header">
+                <p id="client-location">
+                    <i class="icon | fa-solid fa-location-dot" aria-hidden="true"></i>
                     <span>Paris, Belleville</span>
                 </p>
-                <h1>Réservez le menu qui vous convient</h1>
-                <p>Découvrez des restaurants d'exception, sélectionnés par nos soins.</p>
-                <a href="#restaurants">Explorez nos restaurants</a>
+                <div class="block">
+                    <h1>Réservez le menu qui vous convient</h1>
+                    <p>Découvrez des restaurants d'exception, sélectionnés par nos soins.</p>
+                    <a href="#restaurants" class="main-button">Explorez nos restaurants</a>
+                </div>
             </header>
-            <section>
-                <h2>Fonctionnement</h2>
-                <ol>
-                    <li>
-                        <i class="fa-solid fa-mobile-screen-button" aria-hidden="true"></i>
-                        <span>Choisissez un restaurant</span>
-                    </li>
-                    <li>
-                        <i class="fa-solid fa-list-ul" aria-hidden="true"></i>
-                        <span>Composez votre menu</span>
-                    </li>
-                    <li>
-                        <i class="fa-solid fa-store" aria-hidden="true"></i>
-                        <span>Dégustez au restaurant</span>
-                    </li>
-                </ol>
+            <section id="fonctionnement">
+                <div class="maxw-container">
+                    <h2>Fonctionnement</h2>
+                    <ol class="no-def-style">
+                        <li>
+                            <span class="icon-box">
+                                <i class="icon | fa-solid fa-mobile-screen-button" aria-hidden="true"></i>
+                            </span>
+                            <span class="text-box">Choisissez un restaurant</span>
+                        </li>
+                        <li>
+                            <span class="icon-box">
+                                <i class="icon | fa-solid fa-list-ul" aria-hidden="true"></i>
+                            </span>
+                            <span class="text-box">Composez votre menu</span>
+                        </li>
+                        <li>
+                            <span class="icon-box">
+                                <i class="icon | fa-solid fa-store" aria-hidden="true"></i>
+                            </span>
+                            <span class="text-box">Dégustez au restaurant</span>
+                        </li>
+                    </ol>
+                </div>
             </section>
             <section id="restaurants">
-                <h2>Restaurants</h2>
-                <ul>
-                    <li>
-                        <a href="./restaurants/la-palette-du-gout.html" data-tag="new">
-                            <!-- <img src="./assets/img/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg" alt=""> -->
-                            <div>
-                                <!-- ISSUE : Il y a un problème que j'ai décelé en utilisant le lecteur d'écran NVDA, il dit :
-                                    lien - La palette du goût
-                                    lien - Ménilmontant
-
-                                    Solution 1 (non-testée) : Supprimer le parent <div> et remplacer les <p> par des <span>
-
-                                    La raison est que l'élément HTML <a> possède un modèle de contenu transparent (transparent content model), en gros cela indique que l'on peut y mettrer n'importe quel contenu.
-
-                                    Citation (MDN) : Si l'élément possède un modèle de contenu transparent, son contenu doit alors être structuré comme du HTML5 valide, et ce, même si l'élément transparent a été enlevé et remplacé par ses éléments fils.
-
-                                    On risque de peut-être de rencontrer un problème avec cette solution lorsque l'on va faire la mise en page (CSS), mais à bien y réfléchir je ne pense pas : on donne une hauteur absolue à l'image, on donne la propriété display: block aux spans pour qu'ils s'empilent de manière naturelle.
+                <div class="maxw-container">
+                    <h2>Restaurants</h2>
+                    <ul class="no-def-style">
+                        <li>
+                            <a href="./restaurants/la-palette-du-gout.html" data-tag="new">
+                                <img src="./assets/img/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg" alt="">
+                                <div class="margin-block-balancer">
+                                    <!-- ISSUE : Il y a un problème que j'ai décelé en utilisant le lecteur d'écran NVDA, il dit :
+                                        lien - La palette du goût
+                                        lien - Ménilmontant
+                                        Solution 1 (non-testée) : Supprimer le parent <div> et remplacer les <p> par des <span>
+                                        La raison est que l'élément HTML <a> possède un modèle de contenu transparent (transparent content model), en gros cela indique que l'on peut y mettrer n'importe quel contenu.
+                                        Citation (MDN) : Si l'élément possède un modèle de contenu transparent, son contenu doit alors être structuré comme du HTML5 valide, et ce, même si l'élément transparent a été enlevé et remplacé par ses éléments fils.
+                                        On risque de peut-être de rencontrer un problème avec cette solution lorsque l'on va faire la mise en page (CSS), mais à bien y réfléchir je ne pense pas : on donne une hauteur absolue à l'image, on donne la propriété display: block aux spans pour qu'ils s'empilent de manière naturelle.
+                                    -->
+                                    <p class="name">La palette du goût</p>
+                                    <p class="location">Ménilmontant</p>
+                                </div>
+                            </a>
+                            <label for="like--la-palette-du-gout" class="like-icon-trigger">
+                                <!-- TODO : Pour une meilleure organisation il serait bien de regrouper les inputs dans un formulaire externe.
+                    
+                                    Sans l'utilisation du JavaScript, malheureusement, cela va être difficile car comment écrire un sélecteur CSS pour que l'icône du coeur réponde à l'état de l'input qui serait dans un formulaire externe ? Je ne vois pas ; pour le moment.
                                 -->
-                                <p>La palette du goût</p>
-                                <p>Ménilmontant</p>
-                            </div>
-                        </a>
-                        <label for="like--la-palette-du-gout">
-                            <!-- TODO : Pour une meilleure organisation il serait bien de regrouper les inputs dans un formulaire externe.
-                            
-                                Sans l'utilisation du JavaScript, malheureusement, cela va être difficile car comment écrire un sélecteur CSS pour que l'icône du coeur réponde à l'état de l'input qui serait dans un formulaire externe ? Je ne vois pas ; pour le moment.
-                            -->
-                            <input type="checkbox" class="sr-only" name="like--la-palette-du-gout" id="like--la-palette-du-gout">
-                            <i class="fa-regular fa-heart" aria-hidden="true"></i>
-                        </label>
-                    </li>
-                    <li>
-                        <a href="./restaurants/la-note-enchantee.html" data-tag="new">
-                            <!-- <img src="./assets/img/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg" alt=""> -->
-                            <div>
-                                <p>La note enchantée</p>
-                                <p>Charonne</p>
-                            </div>
-                        </a>
-                        <label for="like--la-note-enchantee">
-                            <input type="checkbox" class="sr-only" name="like--la-note-enchantee" id="like--la-note-enchantee" checked>
-                            <i class="fa-regular fa-heart" aria-hidden="true"></i>
-                        </label>
-                    </li>
-                    <li>
-                        <a href="./restaurants/a-la-francaise.html">
-                            <!-- <img src="./assets/img/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg" alt=""> -->
-                            <div>
-                                <p>À la française</p>
-                                <p>Cité Rouge</p>
-                            </div>
-                        </a>
-                        <label for="like--a-la-francaise">
-                            <input type="checkbox" class="sr-only" name="like--a-la-francaise" id="like--a-la-francaise">
-                            <i class="fa-regular fa-heart" aria-hidden="true"></i>
-                        </label>
-                    </li>
-                    <li>
-                        <a href="./restaurants/le-delice-des-sens.html" data-tag="new">
-                            <!-- <img src="./assets/img/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg" alt=""> -->
-                            <div>
-                                <p>Le délice des sens</p>
-                                <p>Folie-Méricourt</p>
-                            </div>
-                        </a>
-                        <label for="like--le-delice-des-sens">
-                            <input type="checkbox" class="sr-only" name="like--le-delice-des-sens" id="like--le-delice-des-sens">
-                            <i class="fa-regular fa-heart" aria-hidden="true"></i>
-                        </label>
-                    </li>
-                </ul>
+                                <input type="checkbox" class="sr-only" name="like--la-palette-du-gout" id="like--la-palette-du-gout">
+                                <i class="like-icon | fa-regular fa-heart" aria-hidden="true"></i>
+                            </label>
+                        </li>
+                        <li>
+                            <a href="./restaurants/la-note-enchantee.html" data-tag="new">
+                                <img src="./assets/img/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg" alt="">
+                                <div class="margin-block-balancer">
+                                    <p class="name">La note enchantée</p>
+                                    <p class="location">Charonne</p>
+                                </div>
+                            </a>
+                            <label for="like--la-note-enchantee" class="like-icon-trigger">
+                                <input type="checkbox" class="sr-only" name="like--la-note-enchantee" id="like--la-note-enchantee" checked>
+                                <i class="like-icon | fa-regular fa-heart" aria-hidden="true"></i>
+                            </label>
+                        </li>
+                        <li>
+                            <a href="./restaurants/a-la-francaise.html">
+                                <img src="./assets/img/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg" alt="">
+                                <div class="margin-block-balancer">
+                                    <p class="name">À la française</p>
+                                    <p class="location">Cité Rouge</p>
+                                </div>
+                            </a>
+                            <label for="like--a-la-francaise" class="like-icon-trigger">
+                                <input type="checkbox" class="sr-only" name="like--a-la-francaise" id="like--a-la-francaise">
+                                <i class="like-icon | fa-regular fa-heart" aria-hidden="true"></i>
+                            </label>
+                        </li>
+                        <li>
+                            <a href="./restaurants/le-delice-des-sens.html">
+                                <img src="./assets/img/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg" alt="">
+                                <div class="margin-block-balancer">
+                                    <p class="name">Le délice des sens</p>
+                                    <p class="location">Folie-Méricourt</p>
+                                </div>
+                            </a>
+                            <label for="like--le-delice-des-sens" class="like-icon-trigger">
+                                <input type="checkbox" class="sr-only" name="like--le-delice-des-sens" id="like--le-delice-des-sens">
+                                <i class="like-icon | fa-regular fa-heart" aria-hidden="true"></i>
+                            </label>
+                        </li>
+                    </ul>
+                </div>
             </section>
         </main>
         <footer>
             <p>ohmyfood</p>
-            <ul>
+            <ul class="no-def-style | margin-block-balancer">
                 <li>
-                    <a href="">
-                        <i class="fa-solid fa-utensils" aria-hidden="true"></i>
+                    <a href="#">
+                        <i class="icon | fa-solid fa-utensils" aria-hidden="true"></i>
                         <span>Proposer un restaurant</span>
                     </a>
                 </li>
                 <li>
-                    <a href="">
-                        <i class="fa-solid fa-handshake-angle" aria-hidden="true"></i>
+                    <a href="#">
+                        <i class="icon | fa-solid fa-handshake-angle" aria-hidden="true"></i>
                         <span>Devenir partenaire</span>
                     </a>
                 </li>
                 <li>
-                    <a href="">Mentions légales</a>
+                    <a href="#">Mentions légales</a>
                 </li>
                 <li>
-                    <a href="">Contact</a>
+                    <a href="mailto:ohmyfood@laposte.net">Contact</a>
                 </li>
             </ul>
         </footer>

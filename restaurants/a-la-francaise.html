@@ -8,34 +8,44 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Shrikhand&display=swap" rel="stylesheet">
         <script src="https://kit.fontawesome.com/95addc9895.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="../assets/css/style.css">
     </head>
     <body>
-        <header>
-            <a href="../index.html">
-                <i class="fa-solid fa-arrow-left" title="Retourner à la page d'accueil"></i>
-            </a>
-            <p>ohmyfood</p>
+        <header class="site-header">
+            <nav>
+                <a href="../index.html">
+                    <span class="title" lang="en">ohmyfood</span>
+                    <span class="icon-box" aria-hidden="true">
+                        <i class="icon | fa-solid fa-arrow-left"></i>
+                    </span>
+                    <span class="sr-only">Retourner à la page d'accueil</span>
+                </a>
+            </nav>
+            <img src="../assets/img/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg" alt="">
         </header>
-        <main>
-            <header>
-                <img src="../assets/img/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg" alt="">
-                <h1>À la française</h1>
-                <label for="like--a-la-francaise">
-                    <input type="checkbox" class="sr-only" name="like--a-la-francaise" id="like--a-la-francaise">
-                    <i class="fa-regular fa-heart" aria-hidden="true"></i>
-                </label>
+        <main class="menu">
+            <header class="main-header">
+                <div class="bottom-box">
+                    <h1 class="restaurant-name">
+                        <span>À la française</span>
+                        <label for="like--a-la-francaise" class="like-icon-trigger">
+                            <input type="checkbox" class="sr-only" name="like--a-la-francaise" id="like--a-la-francaise">
+                            <i class="like-icon | fa-regular fa-heart" aria-hidden="true"></i>
+                        </label>
+                    </h1>
+                </div>
             </header>
-            <form action="">
+            <form action="/">
                 <fieldset>
                     <legend>Entrées</legend>
                     <label for="starter-0">
                         <input type="checkbox" name="starter-0" id="starter-0" class="sr-only">
-                        <span class="label-text">
-                            <span class="text">
+                        <span class="dish-info">
+                            <span class="dish-name">
                                 <span>Tartare de poulpe acidulé</span>
                                 <span>Aux zestes d'orange</span>
                             </span>
-                            <span class="price">
+                            <span class="dish-price">
                                 <span>25€</span>
                             </span>
                         </span>
@@ -47,12 +57,12 @@
                     </label>
                     <label for="starter-1">
                         <input type="checkbox" name="starter-1" id="starter-1" class="sr-only">
-                        <span class="label-text">
-                            <span class="text">
+                        <span class="dish-info">
+                            <span class="dish-name">
                                 <span>Velouté de légumes d'antan</span>
                                 <span>Carotte, panais, topinambour</span>
                             </span>
-                            <span class="price">
+                            <span class="dish-price">
                                 <span>35€</span>
                             </span>
                         </span>
@@ -64,12 +74,12 @@
                     </label>
                     <label for="starter-2">
                         <input type="checkbox" name="starter-2" id="starter-2" class="sr-only">
-                        <span class="label-text">
-                            <span class="text">
+                        <span class="dish-info">
+                            <span class="dish-name">
                                 <span>Soupe à l'oignon</span>
                                 <span>Revisitée</span>
                             </span>
-                            <span class="price">
+                            <span class="dish-price">
                                 <span>20€</span>
                             </span>
                         </span>
@@ -84,12 +94,12 @@
                     <legend>Plats</legend>
                     <label for="meal-0">
                         <input type="checkbox" name="meal-0" id="meal-0" class="sr-only">
-                        <span class="label-text">
-                            <span class="text">
+                        <span class="dish-info">
+                            <span class="dish-name">
                                 <span>Coquilles Saint-Jacques</span>
                                 <span>Accompagnées d'une purée de panais</span>
                             </span>
-                            <span class="price">
+                            <span class="dish-price">
                                 <span>40€</span>
                             </span>
                         </span>
@@ -101,12 +111,12 @@
                     </label>
                     <label for="meal-1">
                         <input type="checkbox" name="meal-1" id="meal-1" class="sr-only">
-                        <span class="label-text">
-                            <span class="text">
+                        <span class="dish-info">
+                            <span class="dish-name">
                                 <span>Magret de canard</span>
                                 <span>Et parmentier de pommes de terre</span>
                             </span>
-                            <span class="price">
+                            <span class="dish-price">
                                 <span>35€</span>
                             </span>
                         </span>
@@ -118,12 +128,12 @@
                     </label>
                     <label for="meal-2">
                         <input type="checkbox" name="meal-2" id="meal-2" class="sr-only">
-                        <span class="label-text">
-                            <span class="text">
+                        <span class="dish-info">
+                            <span class="dish-name">
                                 <span>Pigeonneau d’Ille-et-Vilaine</span>
                                 <span>Sur son lit de gnocchis aux légumes</span>
                             </span>
-                            <span class="price">
+                            <span class="dish-price">
                                 <span>44€</span>
                             </span>
                         </span>
@@ -138,12 +148,12 @@
                     <legend>Desserts</legend>
                     <label for="dessert-0">
                         <input type="checkbox" name="dessert-0" id="dessert-0" class="sr-only">
-                        <span class="label-text">
-                            <span class="text">
-                                <span>Pétales de violettes glacés</span>
+                        <span class="dish-info">
+                            <span class="dish-name">
+                                <span>Pétales de violettes glacées</span>
                                 <span>Et purée de noisettes</span>
                             </span>
-                            <span class="price">
+                            <span class="dish-price">
                                 <span>40€</span>
                             </span>
                         </span>
@@ -155,12 +165,12 @@
                     </label>
                     <label for="dessert-1">
                         <input type="checkbox" name="dessert-1" id="dessert-1" class="sr-only">
-                        <span class="label-text">
-                            <span class="text">
+                        <span class="dish-info">
+                            <span class="dish-name">
                                 <span>Fondant au chocolat</span>
                                 <span>Revisité</span>
                             </span>
-                            <span class="price">
+                            <span class="dish-price">
                                 <span>22€</span>
                             </span>
                         </span>
@@ -170,14 +180,14 @@
                             </span>
                         </span>
                     </label>
-                    <label for="dessert-1">
-                        <input type="checkbox" name="dessert-1" id="dessert-1" class="sr-only">
-                        <span class="label-text">
-                            <span class="text">
+                    <label for="dessert-2">
+                        <input type="checkbox" name="dessert-2" id="dessert-2" class="sr-only">
+                        <span class="dish-info">
+                            <span class="dish-name">
                                 <span>Millefeuille croustillant</span>
                                 <span>Myrtilles et pâte d’amande</span>
                             </span>
-                            <span class="price">
+                            <span class="dish-price">
                                 <span>23€</span>
                             </span>
                         </span>
@@ -189,30 +199,30 @@
                     </label>
                 </fieldset>
                 <div>
-                    <button type="submit">Commander</button>
+                    <button type="submit" class="main-button">Commander</button>
                 </div>
             </form>
         </main>
         <footer>
             <p>ohmyfood</p>
-            <ul>
+            <ul class="no-def-style">
                 <li>
-                    <a href="">
-                        <i class="fa-solid fa-utensils" aria-hidden="true"></i>
+                    <a href="#">
+                        <i class="icon | fa-solid fa-utensils" aria-hidden="true"></i>
                         <span>Proposer un restaurant</span>
                     </a>
                 </li>
                 <li>
-                    <a href="">
-                        <i class="fa-solid fa-handshake-angle" aria-hidden="true"></i>
+                    <a href="#">
+                        <i class="icon | fa-solid fa-handshake-angle" aria-hidden="true"></i>
                         <span>Devenir partenaire</span>
                     </a>
                 </li>
                 <li>
-                    <a href="">Mentions légales</a>
+                    <a href="#">Mentions légales</a>
                 </li>
                 <li>
-                    <a href="">Contact</a>
+                    <a href="mailto:ohmyfood@laposte.net">Contact</a>
                 </li>
             </ul>
         </footer>
