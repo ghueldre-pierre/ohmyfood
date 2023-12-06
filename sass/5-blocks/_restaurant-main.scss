@@ -5,6 +5,10 @@
     max-width: 1055px;
     margin-inline: auto;
 
+    /* pour être au-dessus de l'image (voir site-header) */
+    position: relative;
+    z-index: 2;
+
     form {
         padding-block: 40px;
     }
