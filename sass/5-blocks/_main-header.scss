@@ -1,22 +1,88 @@
 .block--main-header {
     background-color: var(--clr-neutral-200);
+    text-align: center;
+
+    /* FOR RESTAURANT PAGES */
+    position: relative;
 
     /* HOME PAGE */
+    .client-location {
+        background-color: var(--clr-neutral-300);
+
+        margin: 0;
+        padding-block: 1em; /* ~ 50px for 1rem(16px) */
+
+        .icon {
+            /* TODO : Revoir cette marge pour qu'elle rétrécisse en dessous de taille écran 375 px : idée > utiliser la fonction min() */
+            margin-right: 1.0625em; /* ~ 17px for 1rem(16px) */
+        }
+    }
+
+    .main-content {
+        width: 86%; /* ~ 315px for 375vw */
+        margin-inline: auto;
+        padding-block-start: 42px;
+        padding-block-end: 57px;
+    }
+
+    .main-content * {
+        margin-block: 0;
+    }
+
+    .main-content * + * {
+        margin-top: 25px;
+    }
+
     .main-content h1 {
         font-size: var(--fs-24);
     }
+
     .main-content p {
         font-weight: var(--fw-light);
     }
-    .client-location {
-        background-color: var(--clr-neutral-300);
+
+    .main-button {
+        /* TODO : revoir cette méthode de calcul */
+        padding-inline: 1.18em;
     }
 
     /* RESTAURANT PAGE */
-    .restaurant-name {
-        font-family: var(--ff-accent);
-    }
     .bottom-box {
         background-color: inherit;
+
+        text-align: initial;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        border-top-left-radius: 1.6em;
+        border-top-right-radius: 1.6em;
+        padding-inline: 17px;
+        padding-block-start: 32px;
+    }
+
+    .like-icon-trigger {
+        padding-inline: 0.8em;
+        /* for when the restaurant name become too long to fit on one line */
+        align-self: end;
+    }
+
+    .restaurant-name {
+        font-family: var(--ff-accent);
+
+        display: flex;
+        justify-content: space-between;
+    }
+
+    @media (min-width: 768px) {
+        .restaurant-name {
+            max-width: max-content;
+            margin-inline: auto;
+            justify-content: normal;
+        }
+    
+        .main-content {
+            padding-block: 30px;
+        }
     }
 }
