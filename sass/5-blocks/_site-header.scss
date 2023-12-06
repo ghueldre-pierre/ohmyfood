@@ -7,6 +7,10 @@
 
     color: #101010;
 
+    /* to display the box-shadow */
+    position: relative;
+    z-index: 1;
+
     /* HOME */
     .title {
         display: inline-block;

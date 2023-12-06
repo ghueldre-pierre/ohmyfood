@@ -5,6 +5,9 @@
     /* FOR RESTAURANT PAGES */
     position: relative;
 
+    /* Pour apparaître au dessus de l'image  (voir site-header) et masquer le drop-shadow du site-header */
+    z-index: 2;
+
     /* HOME PAGE */
     .client-location {
         background-color: var(--clr-neutral-300);
