@@ -5,5 +5,5 @@ Ohmyfood est une entreprise de commande de repas en ligne. Notre concept permet 
 Pour compiler, veillez à ce que Sass soit installé et taper :
 
 ```console
-sass --watch ./sass/style.scss ./assets/css/style.css
+sass --watch ./sass/main.scss ./assets/css/style.css
 ```

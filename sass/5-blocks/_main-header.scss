@@ -1,0 +1,14 @@
+.block--main-header {
+    /* HOME PAGE */
+    .main-content h1 {
+        font-size: var(--fs-24);
+    }
+    .main-content p {
+        font-weight: var(--fw-light);
+    }
+
+    /* RESTAURANT PAGE */
+    .restaurant-name {
+        font-family: var(--ff-accent);
+    }
+}

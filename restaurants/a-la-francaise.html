@@ -11,7 +11,7 @@
         <link rel="stylesheet" href="../assets/css/style.css">
     </head>
     <body>
-        <header class="site-header">
+        <header class="block--site-header">
             <nav>
                 <a href="../index.html">
                     <span class="title" lang="en">ohmyfood</span>
@@ -21,10 +21,10 @@
                     <span class="sr-only">Retourner à la page d'accueil</span>
                 </a>
             </nav>
-            <img src="../assets/img/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg" alt="">
+            <!-- <img src="../assets/img/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg" alt=""> -->
         </header>
         <main class="menu">
-            <header class="main-header">
+            <header class="block--main-header">
                 <div class="bottom-box">
                     <h1 class="restaurant-name">
                         <span>À la française</span>
@@ -38,14 +38,14 @@
             <form action="/">
                 <fieldset>
                     <legend>Entrées</legend>
-                    <label for="starter-0">
+                    <label for="starter-0" class="block--dish">
                         <input type="checkbox" name="starter-0" id="starter-0" class="sr-only">
-                        <span class="dish-info">
-                            <span class="dish-name">
-                                <span>Tartare de poulpe acidulé</span>
-                                <span>Aux zestes d'orange</span>
+                        <span class="info">
+                            <span class="box--name-details">
+                                <span class="name">Tartare de poulpe acidulé</span>
+                                <span class="details">Aux zestes d'orange</span>
                             </span>
-                            <span class="dish-price">
+                            <span class="price">
                                 <span>25€</span>
                             </span>
                         </span>
@@ -55,14 +55,14 @@
                             </span>
                         </span>
                     </label>
-                    <label for="starter-1">
+                    <label for="starter-1" class="block--dish">
                         <input type="checkbox" name="starter-1" id="starter-1" class="sr-only">
-                        <span class="dish-info">
-                            <span class="dish-name">
-                                <span>Velouté de légumes d'antan</span>
-                                <span>Carotte, panais, topinambour</span>
+                        <span class="info">
+                            <span>
+                                <span class="name">Velouté de légumes d'antan</span>
+                                <span class="details">Carotte, panais, topinambour</span>
                             </span>
-                            <span class="dish-price">
+                            <span class="price">
                                 <span>35€</span>
                             </span>
                         </span>
@@ -72,14 +72,14 @@
                             </span>
                         </span>
                     </label>
-                    <label for="starter-2">
+                    <label for="starter-2" class="block--dish">
                         <input type="checkbox" name="starter-2" id="starter-2" class="sr-only">
-                        <span class="dish-info">
-                            <span class="dish-name">
-                                <span>Soupe à l'oignon</span>
-                                <span>Revisitée</span>
+                        <span class="info">
+                            <span>
+                                <span class="name">Soupe à l'oignon</span>
+                                <span class="details">Revisitée</span>
                             </span>
-                            <span class="dish-price">
+                            <span class="price">
                                 <span>20€</span>
                             </span>
                         </span>
@@ -92,14 +92,14 @@
                 </fieldset>
                 <fieldset>
                     <legend>Plats</legend>
-                    <label for="meal-0">
+                    <label for="meal-0" class="block--dish">
                         <input type="checkbox" name="meal-0" id="meal-0" class="sr-only">
-                        <span class="dish-info">
-                            <span class="dish-name">
-                                <span>Coquilles Saint-Jacques</span>
-                                <span>Accompagnées d'une purée de panais</span>
+                        <span class="info">
+                            <span>
+                                <span class="name">Coquilles Saint-Jacques</span>
+                                <span class="details">Accompagnées d'une purée de panais</span>
                             </span>
-                            <span class="dish-price">
+                            <span class="price">
                                 <span>40€</span>
                             </span>
                         </span>
@@ -109,14 +109,14 @@
                             </span>
                         </span>
                     </label>
-                    <label for="meal-1">
+                    <label for="meal-1" class="block--dish">
                         <input type="checkbox" name="meal-1" id="meal-1" class="sr-only">
-                        <span class="dish-info">
-                            <span class="dish-name">
-                                <span>Magret de canard</span>
-                                <span>Et parmentier de pommes de terre</span>
+                        <span class="info">
+                            <span>
+                                <span class="name">Magret de canard</span>
+                                <span class="details">Et parmentier de pommes de terre</span>
                             </span>
-                            <span class="dish-price">
+                            <span class="price">
                                 <span>35€</span>
                             </span>
                         </span>
@@ -126,14 +126,14 @@
                             </span>
                         </span>
                     </label>
-                    <label for="meal-2">
+                    <label for="meal-2" class="block--dish">
                         <input type="checkbox" name="meal-2" id="meal-2" class="sr-only">
-                        <span class="dish-info">
-                            <span class="dish-name">
-                                <span>Pigeonneau d’Ille-et-Vilaine</span>
-                                <span>Sur son lit de gnocchis aux légumes</span>
+                        <span class="info">
+                            <span>
+                                <span class="name">Pigeonneau d’Ille-et-Vilaine</span>
+                                <span class="details">Sur son lit de gnocchis aux légumes</span>
                             </span>
-                            <span class="dish-price">
+                            <span class="price">
                                 <span>44€</span>
                             </span>
                         </span>
@@ -146,14 +146,14 @@
                 </fieldset>
                 <fieldset>
                     <legend>Desserts</legend>
-                    <label for="dessert-0">
+                    <label for="dessert-0" class="block--dish">
                         <input type="checkbox" name="dessert-0" id="dessert-0" class="sr-only">
-                        <span class="dish-info">
-                            <span class="dish-name">
-                                <span>Pétales de violettes glacées</span>
-                                <span>Et purée de noisettes</span>
+                        <span class="info">
+                            <span>
+                                <span class="name">Pétales de violettes glacées</span>
+                                <span class="details">Et purée de noisettes</span>
                             </span>
-                            <span class="dish-price">
+                            <span class="price">
                                 <span>40€</span>
                             </span>
                         </span>
@@ -163,14 +163,14 @@
                             </span>
                         </span>
                     </label>
-                    <label for="dessert-1">
+                    <label for="dessert-1" class="block--dish">
                         <input type="checkbox" name="dessert-1" id="dessert-1" class="sr-only">
-                        <span class="dish-info">
-                            <span class="dish-name">
-                                <span>Fondant au chocolat</span>
-                                <span>Revisité</span>
+                        <span class="info">
+                            <span>
+                                <span class="name">Fondant au chocolat</span>
+                                <span class="details">Revisité</span>
                             </span>
-                            <span class="dish-price">
+                            <span class="price">
                                 <span>22€</span>
                             </span>
                         </span>
@@ -180,14 +180,14 @@
                             </span>
                         </span>
                     </label>
-                    <label for="dessert-2">
+                    <label for="dessert-2" class="block--dish">
                         <input type="checkbox" name="dessert-2" id="dessert-2" class="sr-only">
-                        <span class="dish-info">
-                            <span class="dish-name">
-                                <span>Millefeuille croustillant</span>
-                                <span>Myrtilles et pâte d’amande</span>
+                        <span class="info">
+                            <span>
+                                <span class="name">Millefeuille croustillant</span>
+                                <span class="details">Myrtilles et pâte d’amande</span>
                             </span>
-                            <span class="dish-price">
+                            <span class="price">
                                 <span>23€</span>
                             </span>
                         </span>

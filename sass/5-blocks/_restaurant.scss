@@ -1,0 +1,21 @@
+.block--restaurant {
+    .location {
+        font-size: var(--fs-17);
+        font-weight: var(--fw-light);
+    }
+    
+    .name {
+        font-size: var(--fs-18);
+        font-weight: var(--fw-bold);
+    }
+
+    a[data-tag="new"]::before {
+        content: "Nouveau";
+        font-size: var(--fs-14); /* 14 pixels */
+    }
+}
+
+.name--large {
+    font-family: 'Shrikhand', serif;
+    font-size: var(--fs-28);
+}
