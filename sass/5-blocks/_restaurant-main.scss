@@ -1,3 +1,59 @@
 .block--restaurant-main {
     background-color: var(--clr-neutral-200);
+
+    background-color: #F6F6F6;
+    max-width: 1055px;
+    margin-inline: auto;
+
+    form {
+        padding-block: 40px;
+    }
+    
+    fieldset + * {
+        margin-block: 0;
+        margin-block-start: 40px;
+    }
+    
+    fieldset {
+        border: none;
+        /* alias de min-width */
+        /* nécessaire pour que le text-overflow fonctionne */
+        /* par défaut (sur Chrome) la valeur est min-content */
+        min-inline-size: auto;
+        /* reinitialise le padding-block car le navigateur en applique par défaut ce qui fausse notre espacement de 40px */
+        padding-block: 0;
+    }
+    
+    fieldset * + label {
+        margin-block: 0;
+        margin-top: 12px;
+    }
+    
+    legend {
+        text-transform: uppercase;
+    
+        /* bon moyen d'annuler la petite marge « invisible » du dessous */
+        /* attention : Current implementations in some browsers will remove from the accessibility tree any element with a display value of contents (but descendants will remain) */
+        /* testé sur Firefox et Chrome sans problème d'accessibilité */
+        display: contents;
+    }
+
+    legend::after {
+        content: "";
+        background-color: var(--clr-accent-100);
+    
+        display: block;
+        width: 40px;
+        height: 3px;
+    
+        margin-top: 5px; /* make legend total height = 27px */
+    }
+
+    .form-footer {
+        text-align: center;
+
+        button {
+            width: 186px;
+        }
+    }
 }
