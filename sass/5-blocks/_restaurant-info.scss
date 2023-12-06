@@ -1,15 +1,23 @@
 .block--restaurant-info {
     background-color: var(--clr-neutral-100);
 
-    .location {
-        font-size: var(--fs-17);
-        font-weight: var(--fw-light);
+    border-radius: 1.6em;
+    overflow: hidden;
+
+    /* c'est la largeur sur la maquette (version desktop) */
+    width: 100%;
+    margin-inline: auto;
+
+    /* pour le positionnement du coeur et du tag optionnel « Nouveau » */
+    position: relative;
+
+    a {
+        color: inherit;
     }
-    
-    .name {
-        font-size: var(--fs-18);
-        font-weight: var(--fw-bold);
-    }
+
+    img {
+        height: 174px;
+    }    
 
     a[data-tag="new"]::before {
         content: "Nouveau";
@@ -17,6 +25,44 @@
 
         color: var(--clr-txt-tag);
         background-color: var(--clr-accent-100);
+
+        position: absolute;
+        padding-block: 0.45em; /* ~ 29 px for 14px*/
+        padding-inline: 0.9em; /* ~ 80 px for 14px */
+
+        top: var(--fs-15);
+        right: var(--fs-15);
+    }
+
+    .like-icon-trigger {
+        position: absolute;
+        bottom: 2em;
+        right: 1em;
+    }
+
+    .like-icon {
+        width: 22px;
+        height: 22px;
+    }
+
+    .text-block {
+        padding: 1em;
+
+        .name, .location {
+            margin-block: 0;
+        }
+
+        .location {
+            margin-top: 5px;
+
+            font-size: var(--fs-17);
+            font-weight: var(--fw-light);
+        }
+
+        .name {
+            font-size: var(--fs-18);
+            font-weight: var(--fw-bold);
+        }
     }
 }
 
