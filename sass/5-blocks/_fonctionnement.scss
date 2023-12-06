@@ -1,20 +1,93 @@
 .block--fonctionnement {
+    padding-inline: 5.3%;
+    padding-block-start: 48px;
+    padding-block-end: 68px;
+
+    ol {
+        margin-top: 26px;
+        counter-reset: list-number;
+        display: flex;
+        flex-direction: column;
+        row-gap: 25px;
+        column-gap: 36px;
+        /* in relation with the left position of the li::before below */
+        margin-inline: 12px;
+    }
+
     li {
         font-weight: var(--fw-medium);
 
         background-color: var(--clr-neutral-200);
+
+        counter-increment: list-number;
+        position: relative;
+
+        padding-block: 1.7em; /* ~ 73px for 1rem */
+
+        border-radius: 1.6em;
+        box-shadow: 0px 4px 15px var(--clr-boxshadow);
+
+        display: flex;
+        width: 100%;
     }
 
     li::before {
         color: var(--clr-neutral-200);
         background-color: var(--clr-accent-900);
+
+        content: counter(list-number);
+        position: absolute;
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+
+        display: inline-block;
+        text-align: center;
+        line-height: 1.4;
+
+        left: -12px;
+        top: 1.6em;
     }
 
     .icon-box {
         color: var(--clr-neutral-500);
+
+        display: inline-block;
+        min-width: 74px;
+        text-align: center;
     }
 
     li:last-of-type .icon {
         color: var(--clr-accent-900);
+    }
+
+    .text-box {
+        white-space: nowrap;
+    }
+
+    /* -------------------------------------------------------- */
+    /* facultatif pas demandé : cela dit il n'a pas été donné de taille minimale dans la documentation du projet */
+    @media (max-width: 319px) {
+        .icon-box {
+            display: none;
+        }
+        li {
+            display: revert;
+            padding-inline-start: 10%;
+        }
+    }
+    /* -------------------------------------------------------- */
+
+    @media (min-width: 1080px) {
+        padding-block: 50px;
+        
+        ol {
+            flex-direction: row;
+            margin-inline: 0;
+            margin-inline-start: 12px;
+        }
+        li {
+            max-width: 322px;
+        }
     }
 }
