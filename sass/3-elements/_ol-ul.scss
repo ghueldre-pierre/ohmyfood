@@ -1,0 +1,15 @@
+/* cette version pose des problèmes de spécificité */
+/* ol.no-def-style,
+ul.no-def-style {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+} */
+
+/* cette version ne pose plus de problèmes de spécificité dû à l'utilisation de la pseudo-classe :where */
+ol:where(.no-def-style),
+ul:where(.no-def-style) {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
