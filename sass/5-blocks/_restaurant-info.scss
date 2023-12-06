@@ -1,4 +1,6 @@
-.block--restaurant {
+.block--restaurant-info {
+    background-color: var(--clr-neutral-100);
+
     .location {
         font-size: var(--fs-17);
         font-weight: var(--fw-light);
@@ -12,6 +14,9 @@
     a[data-tag="new"]::before {
         content: "Nouveau";
         font-size: var(--fs-14); /* 14 pixels */
+
+        color: var(--clr-txt-tag);
+        background-color: var(--clr-accent-100);
     }
 }
 

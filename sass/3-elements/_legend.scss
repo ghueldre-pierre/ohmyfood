@@ -1,3 +1,7 @@
 legend {
     font-weight: var(--fw-light);
+
+    &::after {
+        background-color: var(--clr-accent-100);
+    }
 }

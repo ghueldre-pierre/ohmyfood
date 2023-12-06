@@ -1,4 +1,7 @@
-footer {
+.block--site-footer {
+    background-color: var(--clr-neutral-900);
+    color: var(--clr-neutral-100);
+
     a {
         font-weight: var(--fw-normal);
     }
@@ -12,4 +15,3 @@ footer {
         font-weight: var(--fw-medium);
     }
 }
-

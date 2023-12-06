@@ -1,3 +1,20 @@
-.block--fonctionnement li {
-    font-weight: var(--fw-medium);
+.block--fonctionnement {
+    li {
+        font-weight: var(--fw-medium);
+
+        background-color: var(--clr-neutral-200);
+    }
+
+    li::before {
+        color: var(--clr-neutral-200);
+        background-color: var(--clr-accent-900);
+    }
+
+    .icon-box {
+        color: var(--clr-neutral-500);
+    }
+
+    li:last-of-type .icon {
+        color: var(--clr-accent-900);
+    }
 }

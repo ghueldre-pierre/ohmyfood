@@ -1,0 +1,24 @@
+:root {
+    --clr-accent-100: #99E2D0;
+    --clr-accent-900: #9356DC;
+
+    --clr-neutral-100: white;
+    --clr-neutral-200: #F6F6F6;
+    --clr-neutral-300: #EAEAEA;
+    --clr-neutral-500: #7E7E7E;
+    --clr-neutral-900: #353535;
+
+    /* couleur utilisée par les tags "Nouveau" sur la page d'accueil */
+    --clr-txt-tag: #008766;
+
+    /* ce gradient de couleur est utilisé par : 
+        - l'icône intéractive en forme de coeur ;
+        - le bouton principal.
+    */
+    --clr-gradient-100: #FF79DA;
+    --clr-gradient-900: var(--clr-accent-900);
+
+    /* couleur utilisée par les divers box-shadow */
+    --clr-box-shadow: #00000026;
+
+}

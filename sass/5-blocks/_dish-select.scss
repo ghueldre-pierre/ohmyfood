@@ -1,0 +1,22 @@
+.block--dish-select {
+    font-size: var(--fs-15);
+
+    background-color: var(--clr-neutral-100);
+
+    .name {
+        font-size: var(--fs-18);
+    }
+    .details {
+        font-weight: var(--fw-light);
+    }
+    .price {
+        font-weight: var(--fw-bold);
+    }
+    .custom-checkbox {
+        background-color: var(--clr-accent-100);
+    }
+    .check-icon {
+        background-color: var(--clr-neutral-100);
+        color: var(--clr-accent-100);
+    }
+}
