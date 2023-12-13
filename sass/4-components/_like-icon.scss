@@ -27,4 +27,8 @@
         z-index: 1;
         transition: background-position-y 1.618s;
     }
+
+    input:checked + .color-fill {
+        background-position-y: 100%;
+    }
 }
