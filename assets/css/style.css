@@ -1,0 +1,613 @@
+@charset "UTF-8";
+:root {
+  --fs-30: 1.875rem;
+  --fs-28: 1.75rem;
+  --fs-24: 1.5rem;
+  --fs-18: 1.125rem;
+  --fs-17: 1.0625rem;
+  --fs-15: 0.9375rem;
+  --fs-14: 0.875rem;
+  --ff-accent: "Shrikhand", serif;
+  --ff-normal: "Roboto", sans-serif;
+  --fw-light: 300;
+  --fw-normal: 400;
+  --fw-medium: 500;
+  --fw-bold: 700;
+}
+
+:root {
+  --clr-accent-100: #99E2D0;
+  --clr-accent-900: #9356DC;
+  --clr-neutral-100: white;
+  --clr-neutral-200: #F6F6F6;
+  --clr-neutral-300: #EAEAEA;
+  --clr-neutral-500: #7E7E7E;
+  --clr-neutral-900: #353535;
+  /* couleur utilisée par les tags "Nouveau" sur la page d'accueil */
+  --clr-txt-tag: #008766;
+  /* ce gradient de couleur est utilisé par : 
+      - l'icône intéractive en forme de coeur ;
+      - le bouton principal.
+  */
+  --clr-gradient-100: #FF79DA;
+  --clr-gradient-900: var(--clr-accent-900);
+  /* couleur utilisée par les divers box-shadow */
+  --clr-boxshadow: #00000026;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+body {
+  /* font-weight le plus utilisé */
+  font-weight: var(--fw-medium);
+  /* font-family la plus utilisée*/
+  font-family: var(--ff-normal);
+}
+
+a, a:visited, a:active {
+  /* bizarrement cela fait que la couleur de main-button n'est pas utilisée ... alors qu'elle est définie plus bas dans la cascade et que la spécificité est égale */
+  /* color: inherit; */
+  text-decoration-line: none;
+}
+
+button {
+  font: inherit;
+  border: none;
+  cursor: pointer;
+}
+
+h1 {
+  font-size: var(--fs-28);
+}
+
+h2 {
+  font-size: var(--fs-24);
+}
+
+img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+label {
+  cursor: pointer;
+}
+
+legend {
+  font-weight: var(--fw-light);
+}
+legend::after {
+  background-color: var(--clr-accent-100);
+}
+
+/* cette version pose des problèmes de spécificité */
+/* ol.no-def-style,
+ul.no-def-style {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+} */
+/* cette version ne pose plus de problèmes de spécificité dû à l'utilisation de la pseudo-classe :where */
+ol:where(.no-def-style),
+ul:where(.no-def-style) {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+svg {
+  display: block;
+}
+
+.main-button {
+  color: var(--clr-neutral-100);
+  background-image: linear-gradient(0deg, var(--clr-gradient-900), var(--clr-gradient-100));
+  display: inline-block;
+  padding-block: 1em; /* ~ 50 pixels for 16 pixels font-size */
+  border-radius: 2em;
+}
+
+.comp--max-width-container {
+  max-width: var(--_max-width, 1080px);
+  margin-inline: auto;
+}
+
+label.comp--like-icon {
+  display: inline-block;
+}
+
+.comp--like-icon {
+  --_icon-width: 22px;
+  --_icon-height: 22px;
+  /* background-color: rgba(0, 0, 255, 0.451); */
+}
+.comp--like-icon label {
+  display: inline-block;
+}
+.comp--like-icon .icon-box {
+  position: relative;
+  display: inline-block;
+  /* height: var(--_icon-height); */
+  /* background-color: rgba(255, 0, 0, 0.57); */
+}
+.comp--like-icon svg {
+  display: block;
+  width: var(--_icon-width);
+  /* height: var(--_icon-height); */
+  height: auto;
+}
+.comp--like-icon .color-fill {
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(transparent, transparent 50%, var(--clr-gradient-900) 50%, var(--clr-gradient-100));
+  background-position-y: 0%;
+  background-size: 100% 200%;
+  clip-path: url(#heart-clip);
+  z-index: 1;
+  transition: background-position-y 1.618s;
+}
+.comp--like-icon input:checked + .color-fill {
+  background-position-y: 100%;
+}
+
+.block--site-header {
+  font-family: var(--ff-accent);
+  font-size: var(--fs-30);
+  text-align: center;
+  box-shadow: 0px 3px 4px var(--clr-boxshadow);
+  color: #101010;
+  /* to display the box-shadow */
+  position: relative;
+  z-index: 1;
+  /* HOME */
+  /* RESTAURANT */
+}
+.block--site-header .title {
+  display: inline-block;
+  margin: 0;
+  padding-block: 0.55em; /* ~ 63 pixels for 30 pixels font-size */
+  line-height: 1;
+}
+.block--site-header a {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  color: inherit;
+}
+.block--site-header .icon-box {
+  position: absolute;
+  left: 17px;
+  top: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  color: var(--clr-neutral-900);
+}
+.block--site-header img {
+  height: 275px;
+}
+
+.block--main-header {
+  background-color: var(--clr-neutral-200);
+  text-align: center;
+  /* FOR RESTAURANT PAGES */
+  position: relative;
+  /* HOME PAGE */
+  /* RESTAURANT PAGE */
+}
+.block--main-header .client-location {
+  background-color: var(--clr-neutral-300);
+  margin: 0;
+  padding-block: 1em; /* ~ 50px for 1rem(16px) */
+}
+.block--main-header .client-location .icon {
+  /* TODO : Revoir cette marge pour qu'elle rétrécisse en dessous de taille écran 375 px : idée > utiliser la fonction min() */
+  margin-right: 1.0625em; /* ~ 17px for 1rem(16px) */
+}
+.block--main-header .main-content {
+  width: 86%; /* ~ 315px for 375vw */
+  margin-inline: auto;
+  padding-block-start: 42px;
+  padding-block-end: 57px;
+}
+.block--main-header .main-content * {
+  margin-block: 0;
+}
+.block--main-header .main-content * + * {
+  margin-top: 25px;
+}
+.block--main-header .main-content h1 {
+  font-size: var(--fs-24);
+}
+.block--main-header .main-content p {
+  font-weight: var(--fw-light);
+}
+.block--main-header .main-button {
+  /* TODO : revoir cette méthode de calcul */
+  padding-inline: 1.18em;
+}
+.block--main-header .bottom-box {
+  background-color: inherit;
+  text-align: initial;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border-top-left-radius: 1.6em;
+  border-top-right-radius: 1.6em;
+  padding-inline: 17px;
+  padding-block-start: 32px;
+}
+.block--main-header .comp--like-icon {
+  padding-inline: 0.8em;
+  /* for when the restaurant name become too long to fit on one line */
+  align-self: end;
+}
+.block--main-header .restaurant-name {
+  font-family: var(--ff-accent);
+  display: flex;
+  justify-content: space-between;
+}
+@media (min-width: 768px) {
+  .block--main-header .restaurant-name {
+    max-width: max-content;
+    margin-inline: auto;
+    justify-content: normal;
+  }
+  .block--main-header .main-content {
+    padding-block: 30px;
+  }
+}
+
+.block--fonctionnement {
+  padding-inline: 5.3%;
+  padding-block-start: 48px;
+  padding-block-end: 68px;
+  /* -------------------------------------------------------- */
+  /* facultatif pas demandé : cela dit il n'a pas été donné de taille minimale dans la documentation du projet */
+  /* -------------------------------------------------------- */
+}
+.block--fonctionnement ol {
+  margin-top: 26px;
+  counter-reset: list-number;
+  display: flex;
+  flex-direction: column;
+  row-gap: 25px;
+  column-gap: 36px;
+  /* in relation with the left position of the li::before below */
+  margin-inline: 12px;
+}
+.block--fonctionnement li {
+  font-weight: var(--fw-medium);
+  background-color: var(--clr-neutral-200);
+  counter-increment: list-number;
+  position: relative;
+  padding-block: 1.7em; /* ~ 73px for 1rem */
+  border-radius: 1.6em;
+  box-shadow: 0px 4px 15px var(--clr-boxshadow);
+  display: flex;
+  width: 100%;
+}
+.block--fonctionnement li::before {
+  color: var(--clr-neutral-200);
+  background-color: var(--clr-accent-900);
+  content: counter(list-number);
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: inline-block;
+  text-align: center;
+  line-height: 1.4;
+  left: -12px;
+  top: 1.6em;
+}
+.block--fonctionnement .icon-box {
+  color: var(--clr-neutral-500);
+  display: inline-block;
+  min-width: 74px;
+  text-align: center;
+}
+.block--fonctionnement li:last-of-type .icon {
+  color: var(--clr-accent-900);
+}
+.block--fonctionnement .text-box {
+  white-space: nowrap;
+}
+@media (max-width: 319px) {
+  .block--fonctionnement .icon-box {
+    display: none;
+  }
+  .block--fonctionnement li {
+    display: revert;
+    padding-inline-start: 10%;
+  }
+}
+@media (min-width: 1080px) {
+  .block--fonctionnement {
+    padding-block: 50px;
+  }
+  .block--fonctionnement ol {
+    flex-direction: row;
+    margin-inline: 0;
+    margin-inline-start: 12px;
+  }
+  .block--fonctionnement li {
+    max-width: 322px;
+  }
+}
+
+.block--list-restaurants {
+  background-color: var(--clr-neutral-200);
+  padding-inline: 5.3%; /* WARNING : same as block-fonctionnement (TODO:DRY) */
+  padding-block-start: 54px;
+  padding-block-end: 66px;
+}
+.block--list-restaurants ul {
+  margin-top: 24px;
+  display: grid;
+  gap: 18px;
+}
+@media (min-width: 1080px) {
+  .block--list-restaurants {
+    padding-block: 30px;
+  }
+  .block--list-restaurants ul {
+    grid-template-columns: 1fr 1fr;
+    margin-top: 28px;
+    column-gap: 100px;
+    row-gap: 50px;
+  }
+}
+
+.block--restaurant-info {
+  background-color: var(--clr-neutral-100);
+  border-radius: 1.6em;
+  overflow: hidden;
+  /* c'est la largeur sur la maquette (version desktop) */
+  width: 100%;
+  margin-inline: auto;
+  /* pour le positionnement du coeur et du tag optionnel « Nouveau » */
+  position: relative;
+}
+.block--restaurant-info a {
+  color: inherit;
+}
+.block--restaurant-info img {
+  height: 174px;
+}
+.block--restaurant-info a[data-tag=new]::before {
+  content: "Nouveau";
+  font-size: var(--fs-14); /* 14 pixels */
+  color: var(--clr-txt-tag);
+  background-color: var(--clr-accent-100);
+  position: absolute;
+  padding-block: 0.45em; /* ~ 29 px for 14px*/
+  padding-inline: 0.9em; /* ~ 80 px for 14px */
+  top: var(--fs-15);
+  right: var(--fs-15);
+}
+.block--restaurant-info .text-block {
+  padding: 1em;
+}
+.block--restaurant-info .text-block .name, .block--restaurant-info .text-block .location {
+  margin-block: 0;
+}
+.block--restaurant-info .text-block .location {
+  margin-top: 5px;
+  font-size: var(--fs-17);
+  font-weight: var(--fw-light);
+}
+.block--restaurant-info .text-block .name {
+  font-size: var(--fs-18);
+  font-weight: var(--fw-bold);
+}
+.block--restaurant-info .comp--like-icon {
+  position: absolute;
+  position: absolute;
+  bottom: 2em;
+  right: 1em;
+  /*
+      TODO : voir pour créer des variables CSS afin de gérer la taille du label
+      indépendamment de la taille de l'icône (la taille du label représente la surface
+      cliquable/touchable, les WCAG recommande 44 px minimum pour la largeur comme pour la
+      hauteur, la maquette demande à ce que l'icône fasse 22 pixels de largeur comme de
+      hauteur.
+
+      Pour le moment la taille du label détermine celle de l'icône (voir 4-comps/_like-icon.scss).
+  */
+  width: 22px;
+  height: 22px;
+}
+
+.name--large {
+  font-family: "Shrikhand", serif;
+  font-size: var(--fs-28);
+}
+
+.block--restaurant-main {
+  background-color: var(--clr-neutral-200);
+  background-color: #F6F6F6;
+  max-width: 1055px;
+  margin-inline: auto;
+  /* pour être au-dessus de l'image (voir site-header) */
+  position: relative;
+  z-index: 2;
+}
+.block--restaurant-main form {
+  padding-block: 40px;
+}
+.block--restaurant-main fieldset + * {
+  margin-block: 0;
+  margin-block-start: 40px;
+}
+.block--restaurant-main fieldset {
+  border: none;
+  /* alias de min-width */
+  /* nécessaire pour que le text-overflow fonctionne */
+  /* par défaut (sur Chrome) la valeur est min-content */
+  min-inline-size: auto;
+  /* reinitialise le padding-block car le navigateur en applique par défaut ce qui fausse notre espacement de 40px */
+  padding-block: 0;
+}
+.block--restaurant-main fieldset * + label {
+  margin-block: 0;
+  margin-top: 12px;
+}
+.block--restaurant-main legend {
+  text-transform: uppercase;
+  /* bon moyen d'annuler la petite marge « invisible » du dessous */
+  /* attention : Current implementations in some browsers will remove from the accessibility tree any element with a display value of contents (but descendants will remain) */
+  /* testé sur Firefox et Chrome sans problème d'accessibilité */
+  display: contents;
+}
+.block--restaurant-main legend::after {
+  content: "";
+  background-color: var(--clr-accent-100);
+  display: block;
+  width: 40px;
+  height: 3px;
+  margin-top: 5px; /* make legend total height = 27px */
+}
+.block--restaurant-main .form-footer {
+  text-align: center;
+}
+.block--restaurant-main .form-footer button {
+  width: 186px;
+}
+
+.block--dish-select {
+  font-size: var(--fs-15);
+  background-color: var(--clr-neutral-100);
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 1em;
+  overflow-x: hidden;
+  box-shadow: 0px 4px 15px var(--clr-boxshadow);
+}
+.block--dish-select .box--name-details {
+  min-inline-size: 0;
+}
+.block--dish-select .name, .block--dish-select .details {
+  display: block;
+  margin: 0;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow-x: hidden;
+}
+.block--dish-select .name {
+  font-size: var(--fs-18);
+}
+.block--dish-select .details {
+  font-weight: var(--fw-light);
+  margin-top: 5px;
+}
+.block--dish-select .price {
+  font-weight: var(--fw-bold);
+  align-self: end;
+}
+.block--dish-select .custom-checkbox {
+  background-color: var(--clr-accent-100);
+  width: 60px;
+  align-self: stretch;
+  display: grid;
+  place-items: center;
+  margin-right: -60px;
+  transition-duration: 500ms;
+  transition-property: margin-right;
+  transition-timing-function: cubic-bezier(0.72, -0.4, 0.32, 1);
+}
+.block--dish-select .check-icon {
+  background-color: var(--clr-neutral-100);
+  color: var(--clr-accent-100);
+}
+.block--dish-select .info {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding-block: 12px;
+  padding-inline: 15px;
+  min-width: 0;
+}
+.block--dish-select input:checked ~ .custom-checkbox {
+  margin-right: 0px;
+}
+.block--dish-select .check-icon {
+  width: 1.25em;
+  height: 1.25em;
+  border-radius: 50%;
+  background-color: white;
+  color: #99E2D0;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+}
+
+.block--site-footer {
+  background-color: var(--clr-neutral-900);
+  color: var(--clr-neutral-100);
+  padding-inline: 25px;
+  padding-block: 22px;
+  /* usage du sélecteur universel pour réduire la spécificité (voir @media) */
+}
+.block--site-footer a {
+  font-weight: var(--fw-normal);
+  color: inherit;
+}
+.block--site-footer p {
+  font-size: var(--fs-18);
+  font-family: "Shrikhand", serif;
+  margin: 0;
+  margin-bottom: 1em;
+}
+.block--site-footer .has-icon {
+  font-weight: var(--fw-medium);
+}
+.block--site-footer li + * {
+  margin-block: 0;
+  margin-top: 7px;
+}
+.block--site-footer .icon {
+  width: 11px;
+  height: 13px;
+  margin-right: 11px;
+}
+.block--site-footer .icon + * {
+  font-weight: 500;
+}
+@media (min-width: 1024px) {
+  .block--site-footer {
+    display: flex;
+    flex-direction: row-reverse;
+    padding-block-start: 57px;
+    padding-inline-end: 30px;
+  }
+  .block--site-footer > * {
+    align-self: center;
+  }
+  .block--site-footer p {
+    margin-bottom: 0;
+  }
+  .block--site-footer ul {
+    display: flex;
+    margin-inline-end: 1.6em;
+    gap: 1em;
+  }
+  .block--site-footer li {
+    margin-top: 0;
+  }
+  .block--site-footer li:nth-child(2) {
+    margin-inline-end: 1em;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
