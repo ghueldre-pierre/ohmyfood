@@ -1,26 +1,35 @@
-.comp--like-icon {
-    // les dimensions et la position sont à déterminer par l'élément parent
-    ///////////////////////////////////////////////////////////////////////////
-
+label.comp--like-icon {
     display: inline-block;
+}
+
+.comp--like-icon {
+    --_icon-width: 22px;
+    --_icon-height: 22px;
+
+    /* background-color: rgba(0, 0, 255, 0.451); */
 
     label {
+        display: inline-block;
+    }
+
+    .icon-box {
         position: relative;
         display: inline-block;
-
-        width: 100%;
-        height: 100%;
+        /* height: var(--_icon-height); */
+        /* background-color: rgba(255, 0, 0, 0.57); */
     }
 
     svg {
-        width: 100%;
+        display: block;
+        width: var(--_icon-width);
+        /* height: var(--_icon-height); */
         height: auto;
     }
 
     .color-fill {
         position: absolute;
         inset: 0;
-        background-image: linear-gradient(transparent, transparent 50%, chocolate 50%);
+        background-image: linear-gradient(transparent, transparent 50%, var(--clr-gradient-900) 50%, var(--clr-gradient-100));
         background-position-y: 0%;
         background-size: 100% 200%;
         clip-path: url(#heart-clip);

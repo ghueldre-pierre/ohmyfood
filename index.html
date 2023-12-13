@@ -71,17 +71,15 @@
                                     <p class="location">Ménilmontant</p>
                                 </div>
                             </a>
-                            <span class="comp--like-icon">
-                                <label for="like--la-palette-du-gout">
-                                    <!-- TODO : Pour une meilleure organisation il serait bien de regrouper les inputs dans un formulaire externe.
-                        
-                                        Sans l'utilisation du JavaScript, malheureusement, cela va être difficile car comment écrire un sélecteur CSS pour que l'icône du coeur réponde à l'état de l'input qui serait dans un formulaire externe ? Je ne vois pas ; pour le moment.
-                                    -->
-                                    <input type="checkbox" class="sr-only" name="like--la-palette-du-gout" id="like--la-palette-du-gout">
-                                    <span class="color-fill" aria-hidden="true"></span>
-                                    <i class="like-icon | fa-regular fa-heart" aria-hidden="true"></i>
-                                </label>
-                            </span>
+                            <label for="like--la-palette-du-gout" class="comp--like-icon">
+                                <!-- TODO : Pour une meilleure organisation il serait bien de regrouper les inputs dans un formulaire externe.
+                    
+                                    Sans l'utilisation du JavaScript, malheureusement, cela va être difficile car comment écrire un sélecteur CSS pour que l'icône du coeur réponde à l'état de l'input qui serait dans un formulaire externe ? Je ne vois pas ; pour le moment.
+                                -->
+                                <input type="checkbox" class="sr-only" name="like--la-palette-du-gout" id="like--la-palette-du-gout">
+                                <span class="color-fill" aria-hidden="true"></span>
+                                <i class="like-icon | fa-regular fa-heart" aria-hidden="true"></i>
+                            </label>
                         </li>
                         <li class="block--restaurant-info">
                             <a href="./restaurants/la-note-enchantee.html" data-tag="new">
