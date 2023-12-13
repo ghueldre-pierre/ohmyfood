@@ -34,17 +34,6 @@
         right: var(--fs-15);
     }
 
-    .like-icon-trigger {
-        position: absolute;
-        bottom: 2em;
-        right: 1em;
-    }
-
-    .like-icon {
-        width: 22px;
-        height: 22px;
-    }
-
     .text-block {
         padding: 1em;
 
@@ -63,6 +52,25 @@
             font-size: var(--fs-18);
             font-weight: var(--fw-bold);
         }
+    }
+
+    .comp--like-icon {
+        position: absolute;
+
+        position: absolute;
+        bottom: 2em;
+        right: 1em;
+        /*
+            TODO : voir pour créer des variables CSS afin de gérer la taille du label
+            indépendamment de la taille de l'icône (la taille du label représente la surface
+            cliquable/touchable, les WCAG recommande 44 px minimum pour la largeur comme pour la
+            hauteur, la maquette demande à ce que l'icône fasse 22 pixels de largeur comme de
+            hauteur.
+
+            Pour le moment la taille du label détermine celle de l'icône (voir 4-comps/_like-icon.scss).
+        */
+        width: 22px;
+        height: 22px;
     }
 }
 

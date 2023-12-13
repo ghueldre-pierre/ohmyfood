@@ -1,0 +1,30 @@
+.comp--like-icon {
+    // les dimensions et la position sont à déterminer par l'élément parent
+    ///////////////////////////////////////////////////////////////////////////
+
+    display: inline-block;
+
+    label {
+        position: relative;
+        display: inline-block;
+
+        width: 100%;
+        height: 100%;
+    }
+
+    svg {
+        width: 100%;
+        height: auto;
+    }
+
+    .color-fill {
+        position: absolute;
+        inset: 0;
+        background-image: linear-gradient(transparent, transparent 50%, chocolate 50%);
+        background-position-y: 0%;
+        background-size: 100% 200%;
+        clip-path: url(#heart-clip);
+        z-index: 1;
+        transition: background-position-y 1.618s;
+    }
+}

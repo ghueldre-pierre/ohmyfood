@@ -71,14 +71,17 @@
                                     <p class="location">Ménilmontant</p>
                                 </div>
                             </a>
-                            <label for="like--la-palette-du-gout" class="like-icon-trigger">
-                                <!-- TODO : Pour une meilleure organisation il serait bien de regrouper les inputs dans un formulaire externe.
-                    
-                                    Sans l'utilisation du JavaScript, malheureusement, cela va être difficile car comment écrire un sélecteur CSS pour que l'icône du coeur réponde à l'état de l'input qui serait dans un formulaire externe ? Je ne vois pas ; pour le moment.
-                                -->
-                                <input type="checkbox" class="sr-only" name="like--la-palette-du-gout" id="like--la-palette-du-gout">
-                                <i class="like-icon | fa-regular fa-heart" aria-hidden="true"></i>
-                            </label>
+                            <span class="comp--like-icon">
+                                <label for="like--la-palette-du-gout">
+                                    <!-- TODO : Pour une meilleure organisation il serait bien de regrouper les inputs dans un formulaire externe.
+                        
+                                        Sans l'utilisation du JavaScript, malheureusement, cela va être difficile car comment écrire un sélecteur CSS pour que l'icône du coeur réponde à l'état de l'input qui serait dans un formulaire externe ? Je ne vois pas ; pour le moment.
+                                    -->
+                                    <input type="checkbox" class="sr-only" name="like--la-palette-du-gout" id="like--la-palette-du-gout">
+                                    <i class="like-icon | fa-regular fa-heart" aria-hidden="true"></i>
+                                    <span class="color-fill"></span>
+                                </label>
+                            </span>
                         </li>
                         <li class="block--restaurant-info">
                             <a href="./restaurants/la-note-enchantee.html" data-tag="new">
@@ -88,7 +91,7 @@
                                     <p class="location">Charonne</p>
                                 </div>
                             </a>
-                            <label for="like--la-note-enchantee" class="like-icon-trigger">
+                            <label for="like--la-note-enchantee" class="comp--like-icon">
                                 <input type="checkbox" class="sr-only" name="like--la-note-enchantee" id="like--la-note-enchantee" checked>
                                 <i class="like-icon | fa-regular fa-heart" aria-hidden="true"></i>
                             </label>
@@ -101,7 +104,7 @@
                                     <p class="location">Cité Rouge</p>
                                 </div>
                             </a>
-                            <label for="like--a-la-francaise" class="like-icon-trigger">
+                            <label for="like--a-la-francaise" class="comp--like-icon">
                                 <input type="checkbox" class="sr-only" name="like--a-la-francaise" id="like--a-la-francaise">
                                 <i class="like-icon | fa-regular fa-heart" aria-hidden="true"></i>
                             </label>
@@ -114,7 +117,7 @@
                                     <p class="location">Folie-Méricourt</p>
                                 </div>
                             </a>
-                            <label for="like--le-delice-des-sens" class="like-icon-trigger">
+                            <label for="like--le-delice-des-sens" class="comp--like-icon">
                                 <input type="checkbox" class="sr-only" name="like--le-delice-des-sens" id="like--le-delice-des-sens">
                                 <i class="like-icon | fa-regular fa-heart" aria-hidden="true"></i>
                             </label>
@@ -146,5 +149,12 @@
                 </li>
             </ul>
         </footer>
+        <svg width="0" height="0" viewBox="0 0 512 512" >
+            <defs>
+                <clipPath id="heart-clip" clipPathUnits="objectBoundingBox" transform="scale(0.001953125)">
+                    <path d="M 225.8,468.2 223.3,465.9 48.1,303.2 C 17.4,274.7 0,234.7 0,192.8 v -3.3 C 0,119.1 50,58.7 119.2,45.5 158.6,37.9 198.9,47 231,69.6 c 9,6.4 17.4,13.8 25,22.3 4.2,-4.8 8.7,-9.2 13.5,-13.3 3.7,-3.2 7.5,-6.2 11.5,-9 v 0 C 313.1,47 353.4,37.9 392.8,45.4 462,58.6 512,119.1 512,189.5 v 3.3 c 0,41.9 -17.4,81.9 -48.1,110.4 l -175.2,162.7 -2.5,2.3 c -8.2,7.6 -19,11.9 -30.2,11.9 -11.2,0 -22,-4.2 -30.2,-11.9 z"/>
+                </clipPath>
+            </defs>
+        </svg>
     </body>
 </html>
