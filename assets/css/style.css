@@ -218,6 +218,9 @@ label.comp--like-icon {
   .block--site-header .logo {
     padding-block: 1.9rem; /* ~ 96px de hauteur */
   }
+  .block--site-header .banner-image {
+    height: 383px;
+  }
 }
 
 .block--main-header {
