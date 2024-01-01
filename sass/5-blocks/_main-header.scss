@@ -38,6 +38,7 @@
     }
 
     .main-content p {
+        font-size: var(--fs-18);
         font-weight: var(--fw-light);
     }
 
@@ -83,6 +84,12 @@
     
         .main-content {
             padding-block: 30px;
+        }
+    }
+
+    @media (min-width: 1080px) {
+        .main-content h1 {
+            font-size: var(--fs-40);
         }
     }
 }
