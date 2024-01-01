@@ -21,7 +21,7 @@
     .main-content {
         width: 86%; /* ~ 315px for 375vw */
         margin-inline: auto;
-        padding-block-start: 42px;
+        padding-block-start: 39px;
         padding-block-end: 57px;
     }
 
@@ -45,6 +45,15 @@
     .main-button {
         /* TODO : revoir cette méthode de calcul */
         padding-inline: 1.18em;
+
+        box-shadow: 0 4px 15px var(--clr-boxshadow);
+
+        filter: brightness(1.1);
+    }
+
+    .main-button:active {
+        filter: brightness(1);
+        box-shadow: 0 4px 10px var(--clr-boxshadow-25);
     }
 
     /* RESTAURANT PAGE */

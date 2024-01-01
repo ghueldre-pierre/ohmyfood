@@ -18,7 +18,8 @@
     --clr-gradient-100: #FF79DA;
     --clr-gradient-900: var(--clr-accent-900);
 
-    /* couleur utilisée par les divers box-shadow */
-    --clr-boxshadow: #00000026;
-
+    /* couleurs utilisées par les divers box-shadow */
+    --clr-boxshadow-15: hsla(0, 0%, 0%, 15%);
+    --clr-boxshadow-25: hsla(0, 0%, 0%, 25%);
+    --clr-boxshadow: hsla(0, 0%, 0%, 35%);
 }
