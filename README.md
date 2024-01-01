@@ -7,3 +7,6 @@ Pour compiler, veillez à ce que Sass soit installé et taper :
 ```console
 sass --watch ./sass/main.scss ./assets/css/style.css
 ```
+
+TODO (24/12/2023) :
+

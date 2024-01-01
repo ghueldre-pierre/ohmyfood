@@ -62,14 +62,5 @@
     }
 
     /**/
-    @for $j from 1 through 3 {
-        fieldset:nth-of-type(#{$j}) {
-            --currIndex: calc(3 * (#{$j} - 1));
-        }
-    }
-    @for $i from 1 through 9 {
-        .block--dish-select:nth-of-type(#{$i})::after {
-            animation-delay: calc(0.2s * (#{$i} + var(--currIndex)));
-        }
-    }
+    
 }

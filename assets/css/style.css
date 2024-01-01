@@ -484,41 +484,53 @@ label.comp--like-icon {
 .block--restaurant-main .form-footer button {
   width: 186px;
 }
-.block--restaurant-main fieldset:nth-of-type(1) {
+
+fieldset:nth-of-type(1) {
   --currIndex: calc(3 * (1 - 1));
 }
-.block--restaurant-main fieldset:nth-of-type(2) {
+
+fieldset:nth-of-type(2) {
   --currIndex: calc(3 * (2 - 1));
 }
-.block--restaurant-main fieldset:nth-of-type(3) {
+
+fieldset:nth-of-type(3) {
   --currIndex: calc(3 * (3 - 1));
 }
-.block--restaurant-main .block--dish-select:nth-of-type(1)::after {
-  animation-delay: calc(0.2s * (1 + var(--currIndex)));
+
+.block--dish-select:nth-of-type(1)::after {
+  --anim-delay: calc(0.2s * (1 + var(--currIndex)));
 }
-.block--restaurant-main .block--dish-select:nth-of-type(2)::after {
-  animation-delay: calc(0.2s * (2 + var(--currIndex)));
+
+.block--dish-select:nth-of-type(2)::after {
+  --anim-delay: calc(0.2s * (2 + var(--currIndex)));
 }
-.block--restaurant-main .block--dish-select:nth-of-type(3)::after {
-  animation-delay: calc(0.2s * (3 + var(--currIndex)));
+
+.block--dish-select:nth-of-type(3)::after {
+  --anim-delay: calc(0.2s * (3 + var(--currIndex)));
 }
-.block--restaurant-main .block--dish-select:nth-of-type(4)::after {
-  animation-delay: calc(0.2s * (4 + var(--currIndex)));
+
+.block--dish-select:nth-of-type(4)::after {
+  --anim-delay: calc(0.2s * (4 + var(--currIndex)));
 }
-.block--restaurant-main .block--dish-select:nth-of-type(5)::after {
-  animation-delay: calc(0.2s * (5 + var(--currIndex)));
+
+.block--dish-select:nth-of-type(5)::after {
+  --anim-delay: calc(0.2s * (5 + var(--currIndex)));
 }
-.block--restaurant-main .block--dish-select:nth-of-type(6)::after {
-  animation-delay: calc(0.2s * (6 + var(--currIndex)));
+
+.block--dish-select:nth-of-type(6)::after {
+  --anim-delay: calc(0.2s * (6 + var(--currIndex)));
 }
-.block--restaurant-main .block--dish-select:nth-of-type(7)::after {
-  animation-delay: calc(0.2s * (7 + var(--currIndex)));
+
+.block--dish-select:nth-of-type(7)::after {
+  --anim-delay: calc(0.2s * (7 + var(--currIndex)));
 }
-.block--restaurant-main .block--dish-select:nth-of-type(8)::after {
-  animation-delay: calc(0.2s * (8 + var(--currIndex)));
+
+.block--dish-select:nth-of-type(8)::after {
+  --anim-delay: calc(0.2s * (8 + var(--currIndex)));
 }
-.block--restaurant-main .block--dish-select:nth-of-type(9)::after {
-  animation-delay: calc(0.2s * (9 + var(--currIndex)));
+
+.block--dish-select:nth-of-type(9)::after {
+  --anim-delay: calc(0.2s * (9 + var(--currIndex)));
 }
 
 .block--dish-select {
@@ -540,15 +552,13 @@ label.comp--like-icon {
   --clr-background: lightgrey;
   --clr-ray: white;
   position: absolute;
-  background-color: transparent;
+  /* il est nécessaire de spécifier une couleur à ce stade autrement le contenu du label (ainsi que la checkbox) sont visibles au tout début */
+  /* le background-color est redéfini à transparent durant l'animation "reveal" */
+  background-color: var(--clr-background);
   background-image: linear-gradient(65deg, var(--clr-reveal) 0%, var(--clr-reveal) 10%, var(--clr-ray) 10%, var(--clr-ray) 13%, var(--clr-background) 15%, var(--clr-background) 50%, var(--clr-background) 62%, var(--clr-ray) 64%, var(--clr-background) 80%);
-  background-size: 1000%;
+  background-size: 1030%;
   inset: 0;
-  animation: reveal;
-  animation-duration: 1.6s;
-  animation-fill-mode: both;
-  /* animation-timing-function: cubic-bezier(0.4, 0, 1, 1); */
-  /* animation-delay: calc(0.5s * var(--delay, 1)); */
+  animation: loading 1.6s 0.5s 2 forwards, reveal 1.6s calc(3.2s + var(--anim-delay)) forwards;
 }
 @keyframes loading {
   from {
@@ -559,11 +569,13 @@ label.comp--like-icon {
   }
 }
 @keyframes reveal {
-  0% {
-    background-position: 50%;
+  from {
+    background-position-x: 45%;
+    background-color: transparent;
   }
-  75% {
+  to {
     background-position: 0%;
+    background-color: transparent;
   }
 }
 .block--dish-select .box--name-details {
