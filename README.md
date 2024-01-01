@@ -8,5 +8,5 @@ Pour compiler, veillez à ce que Sass soit installé et taper :
 sass --watch ./sass/main.scss ./assets/css/style.css
 ```
 
-TODO (24/12/2023) :
+Le site est en ligne ici : https://ghueldre-pierre.github.io/ohmyfood/
 
