@@ -1,22 +1,13 @@
 .block--site-header {
-    font-family: var(--ff-accent);
-    font-size: var(--fs-30);
-
-    text-align: center;
     box-shadow: 0px 3px 4px var(--clr-boxshadow);
-
-    color: #101010;
-
     /* to display the box-shadow */
     position: relative;
     z-index: 1;
 
-    /* HOME */
-    .title {
-        display: inline-block;
-        margin: 0;
-        padding-block: 0.55em; /* ~ 63 pixels for 30 pixels font-size */
-        line-height: 1;
+    .logo {
+        width: 200px;
+        margin-inline: auto;
+        padding-block: 0.9rem; /* ~ 63px de hauteur */
     }
 
     /* RESTAURANT */
@@ -39,10 +30,19 @@
         display: flex;
         align-items: center;
         color: var(--clr-neutral-900);
-
     }
 
-    img {
+    .arrow-icon {
+        width: 17px; /* conforme aux maquettes */
+    }
+
+    .banner-image {
         height: 275px;
+    }
+
+    @media (min-width: 1080px) {
+        .logo {
+            padding-block: 1.9rem; /* ~ 96px de hauteur */
+        }
     }
 }
