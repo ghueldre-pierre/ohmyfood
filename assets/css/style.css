@@ -638,7 +638,7 @@ fieldset:nth-of-type(3) {
   margin-right: -60px;
   transition-duration: 500ms;
   transition-property: margin-right;
-  transition-timing-function: cubic-bezier(0.72, -0.4, 0.32, 1);
+  transition-timing-function: ease-out;
 }
 .block--dish-select .check-icon {
   background-color: var(--clr-neutral-100);

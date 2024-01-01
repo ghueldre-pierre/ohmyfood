@@ -103,7 +103,7 @@
 
         transition-duration: 500ms;
         transition-property: margin-right;
-        transition-timing-function: cubic-bezier(.72,-0.4,.32,1);
+        transition-timing-function: ease-out;
     }
     .check-icon {
         background-color: var(--clr-neutral-100);
