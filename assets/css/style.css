@@ -261,6 +261,7 @@ label.comp--like-icon {
   border-top-right-radius: 1.6em;
   padding-inline: 17px;
   padding-block-start: 32px;
+  text-align: center;
 }
 .block--main-header .comp--like-icon {
   padding-inline: 0.8em;
@@ -269,15 +270,8 @@ label.comp--like-icon {
 }
 .block--main-header .restaurant-name {
   font-family: var(--ff-accent);
-  display: flex;
-  justify-content: space-between;
 }
 @media (min-width: 768px) {
-  .block--main-header .restaurant-name {
-    max-width: max-content;
-    margin-inline: auto;
-    justify-content: normal;
-  }
   .block--main-header .main-content {
     padding-block: 30px;
   }
