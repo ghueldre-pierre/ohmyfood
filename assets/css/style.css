@@ -652,6 +652,9 @@ fieldset:nth-of-type(3) {
   padding-inline: 15px;
   min-width: 0;
 }
+.block--dish-select .dish {
+  min-width: 0;
+}
 .block--dish-select input:checked ~ .custom-checkbox {
   margin-right: 0px;
 }
