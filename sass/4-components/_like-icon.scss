@@ -3,11 +3,6 @@ label.comp--like-icon {
 }
 
 .comp--like-icon {
-    --_icon-width: 22px;
-    --_icon-height: 22px;
-
-    /* background-color: rgba(0, 0, 255, 0.451); */
-
     label {
         display: inline-block;
     }
@@ -15,14 +10,11 @@ label.comp--like-icon {
     .icon-box {
         position: relative;
         display: inline-block;
-        /* height: var(--_icon-height); */
-        /* background-color: rgba(255, 0, 0, 0.57); */
     }
 
     svg {
         display: block;
-        width: var(--_icon-width);
-        /* height: var(--_icon-height); */
+        width: 22px;
         height: auto;
     }
 
