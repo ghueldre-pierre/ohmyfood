@@ -146,24 +146,16 @@ label.comp--like-icon {
   display: inline-block;
 }
 
-.comp--like-icon {
-  --_icon-width: 22px;
-  --_icon-height: 22px;
-  /* background-color: rgba(0, 0, 255, 0.451); */
-}
 .comp--like-icon label {
   display: inline-block;
 }
 .comp--like-icon .icon-box {
   position: relative;
   display: inline-block;
-  /* height: var(--_icon-height); */
-  /* background-color: rgba(255, 0, 0, 0.57); */
 }
 .comp--like-icon svg {
   display: block;
-  width: var(--_icon-width);
-  /* height: var(--_icon-height); */
+  width: 22px;
   height: auto;
 }
 .comp--like-icon .color-fill {
@@ -553,54 +545,31 @@ label.comp--like-icon {
   width: 186px;
 }
 
+.block--dish-form label {
+  opacity: 0;
+  animation-name: fade-in;
+  animation-duration: 4s;
+  animation-fill-mode: forwards;
+  animation-delay: var(--animation-delay);
+}
+
 fieldset:nth-of-type(1) {
-  --currIndex: calc(3 * (1 - 1));
+  --animation-delay: 1s;
 }
 
 fieldset:nth-of-type(2) {
-  --currIndex: calc(3 * (2 - 1));
+  --animation-delay: 2s;
 }
 
 fieldset:nth-of-type(3) {
-  --currIndex: calc(3 * (3 - 1));
+  --animation-delay: 3s;
 }
 
-.block--dish-select:nth-of-type(1)::after {
-  --anim-delay: calc(0.2s * (1 + var(--currIndex)));
+@keyframes fade-in {
+  to {
+    opacity: 1;
+  }
 }
-
-.block--dish-select:nth-of-type(2)::after {
-  --anim-delay: calc(0.2s * (2 + var(--currIndex)));
-}
-
-.block--dish-select:nth-of-type(3)::after {
-  --anim-delay: calc(0.2s * (3 + var(--currIndex)));
-}
-
-.block--dish-select:nth-of-type(4)::after {
-  --anim-delay: calc(0.2s * (4 + var(--currIndex)));
-}
-
-.block--dish-select:nth-of-type(5)::after {
-  --anim-delay: calc(0.2s * (5 + var(--currIndex)));
-}
-
-.block--dish-select:nth-of-type(6)::after {
-  --anim-delay: calc(0.2s * (6 + var(--currIndex)));
-}
-
-.block--dish-select:nth-of-type(7)::after {
-  --anim-delay: calc(0.2s * (7 + var(--currIndex)));
-}
-
-.block--dish-select:nth-of-type(8)::after {
-  --anim-delay: calc(0.2s * (8 + var(--currIndex)));
-}
-
-.block--dish-select:nth-of-type(9)::after {
-  --anim-delay: calc(0.2s * (9 + var(--currIndex)));
-}
-
 .block--dish-select {
   font-size: var(--fs-15);
   background-color: var(--clr-neutral-100);
@@ -613,40 +582,6 @@ fieldset:nth-of-type(3) {
   /**/
   position: relative;
   /**/
-}
-.block--dish-select::after {
-  content: "";
-  --clr-reveal: transparent;
-  --clr-background: lightgrey;
-  --clr-ray: white;
-  position: absolute;
-  /* il est nécessaire de spécifier une couleur à ce stade autrement le contenu du label (ainsi que la checkbox) sont visibles au tout début */
-  /* le background-color est redéfini à transparent durant l'animation "reveal" */
-  background-color: var(--clr-background);
-  background-image: linear-gradient(65deg, var(--clr-reveal) 0%, var(--clr-reveal) 10%, var(--clr-ray) 10%, var(--clr-ray) 13%, var(--clr-background) 15%, var(--clr-background) 50%, var(--clr-background) 62%, var(--clr-ray) 64%, var(--clr-background) 80%);
-  /* attention il risque d'y avoir un léger bug d'affichage sur les écrans de toute petite largeur (< 320 pixels) lorsque le check est visible il faudra alors encore augmenter la largeur de l'arrière-plan */
-  /* je mets 100% pour la hauteur car j'ai l'impression que ça avait un léger impact sur les performances (est à auto par défaut) à vérifier */
-  background-size: 1100% 100%;
-  inset: 0;
-  animation: loading 1.6s 0.5s 2 forwards, reveal 1.6s calc(3.2s + var(--anim-delay)) forwards;
-}
-@keyframes loading {
-  from {
-    background-position-x: 100%;
-  }
-  to {
-    background-position-x: 45%;
-  }
-}
-@keyframes reveal {
-  from {
-    background-position-x: 45%;
-    background-color: transparent;
-  }
-  to {
-    background-position: 0%;
-    background-color: transparent;
-  }
 }
 .block--dish-select .box--name-details {
   min-inline-size: 0;
@@ -765,6 +700,18 @@ fieldset:nth-of-type(3) {
   .block--site-footer li:nth-child(2) {
     margin-inline-end: 1em;
   }
+}
+
+.fa-sr-only, .sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
 }
 
 /*# sourceMappingURL=style.css.map */
