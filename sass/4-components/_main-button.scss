@@ -6,11 +6,15 @@
     padding-block: 1em; /* ~ 50 pixels for 16 pixels font-size */
     border-radius: 2em;
 
-    box-shadow: 0 4px 15px var(--clr-boxshadow);
-    filter: brightness(1.1);
+    box-shadow: 0 4px 10px var(--clr-boxshadow-25);
+    filter: brightness(1);
 }
 
-.main-button:active {
-    filter: brightness(1);
-    box-shadow: 0 4px 10px var(--clr-boxshadow-25);
+/*
+Au survol, la couleur de fond des boutons principaux devra légèrement s’éclaircir.
+L’ombre portée devra également être plus visible.
+*/
+.main-button:hover {
+    box-shadow: 0 4px 15px var(--clr-boxshadow);
+    filter: brightness(1.1);
 }
